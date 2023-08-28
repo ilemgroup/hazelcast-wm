@@ -17,7 +17,7 @@
     <name>hazelcast-wm</name>
     <groupId>com.hazelcast</groupId>
     <artifactId>hazelcast-wm</artifactId>
-    <version>4.1-SNAPSHOT</version>
+    <version>5.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <description>Hazelcast In-Memory DataGrid Web Module Plugin</description>
     <url>http://www.hazelcast.com/</url>
@@ -31,17 +31,17 @@
         <maven.build.timestamp.format>yyyyMMdd</maven.build.timestamp.format>
         <timestamp>${maven.build.timestamp}</timestamp>
 
-        <hazelcast.version>4.1</hazelcast.version>
+        <hazelcast.version>5.2.1</hazelcast.version>
 
         <log4j.version>1.2.12</log4j.version>
         <junit.version>4.13.1</junit.version>
 
         <jsp.api.version>2.2.1</jsp.api.version>
-        <servlet.api.version>3.1.0</servlet.api.version>
-        <org.springframework.version>4.3.9.RELEASE</org.springframework.version>
-        <spring-security.version>4.2.3.RELEASE</spring-security.version>
+        <servlet.api.version>6.0.0</servlet.api.version>
+        <org.springframework.version>6.0.4</org.springframework.version>
+        <spring-security.version>6.0.1</spring-security.version>
         <jetty.maven.plugin.version>8.1.2.v20120308</jetty.maven.plugin.version>
-        <tomcat.version>8.5.20</tomcat.version>
+        <tomcat.version>10.1.5</tomcat.version>
 
         <!-- Not using 3.1 at the moment since it recompiles all classes every time -->
         <!-- https://jira.codehaus.org/browse/MCOMPILER-205 -->
@@ -50,7 +50,7 @@
         <maven.jar.plugin.version>2.4</maven.jar.plugin.version>
         <maven.source.plugin.version>2.2.1</maven.source.plugin.version>
         <maven.bundle.plugin.version>2.3.7</maven.bundle.plugin.version>
-        <maven.animal.sniffer.plugin.version>1.14</maven.animal.sniffer.plugin.version>
+        <maven.animal.sniffer.plugin.version>1.23</maven.animal.sniffer.plugin.version>
         <maven.gpg.plugin.version>1.4</maven.gpg.plugin.version>
         <maven.javadoc.plugin.version>2.9</maven.javadoc.plugin.version>
         <bytebuddy.version>1.6.12</bytebuddy.version>
@@ -174,14 +174,14 @@
                 </configuration>
             </plugin>
 
-            <plugin>
+            <!--plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>animal-sniffer-maven-plugin</artifactId>
                 <version>${maven.animal.sniffer.plugin.version}</version>
                 <configuration>
                     <signature>
                         <groupId>org.codehaus.mojo.signature</groupId>
-                        <artifactId>java16</artifactId>
+                        <artifactId>java17</artifactId>
                         <version>1.0</version>
                     </signature>
                 </configuration>
@@ -194,7 +194,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin-->
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -293,8 +293,8 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
             <version>${servlet.api.version}</version>
             <scope>provided</scope>
         </dependency>
