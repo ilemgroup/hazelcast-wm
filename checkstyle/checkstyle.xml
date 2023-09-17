@@ -43,7 +43,7 @@
     </module>
 
     <!-- Enable suppression of file contents using //CHECKSTYLE:[ON|OFF] comments -->
-    <module name="SuppressionCommentFilter"/>
+    <module name="SuppressWithPlainTextCommentFilter"/>
 
     <!-- Enable the suppression annotation @SuppressWarnings("checkstyle:lowercasecheckname"} -->
     <module name="SuppressWarningsFilter"/>
