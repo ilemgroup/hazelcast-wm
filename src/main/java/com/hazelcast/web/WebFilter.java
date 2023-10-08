@@ -292,6 +292,7 @@ public class WebFilter implements Filter {
             }
         }
         sessionCookie.setSecure(config.isCookieSecure());
+        sessionCookie.setAttribute("SameSite", "Strict");
         req.res.addCookie(sessionCookie);
     }
 
