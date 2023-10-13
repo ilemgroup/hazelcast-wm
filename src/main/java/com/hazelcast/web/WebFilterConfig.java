@@ -159,6 +159,8 @@ public final class WebFilterConfig {
      */
     public static final String COOKIE_MAX_AGE = "cookie-max-age";
 
+    public static final String COOKIE_SAME_SITE= "cookie-same-site";
+
     private static final ILogger LOGGER = Logger.getLogger(WebFilterConfig.class);
     private static final int SESSION_TTL_DEFAULT_SECONDS = 1800;
 
@@ -176,6 +178,7 @@ public final class WebFilterConfig {
     private String cookieName;
     private String cookieDomain;
     private boolean cookieSecure;
+    private String cookieSameSite;
     private boolean cookieHttpOnly;
     private String cookiePath;
     private int cookieMaxAge;
@@ -214,6 +217,7 @@ public final class WebFilterConfig {
         boolean cookieHttpOnly = getBoolean(filterConfig, properties, COOKIE_HTTP_ONLY, false);
         String cookiePath = getString(filterConfig, properties, COOKIE_PATH, null);
         int cookieMaxAge = getInt(filterConfig, properties, COOKIE_MAX_AGE, -1);
+        String cookieSameSite = getString(filterConfig, properties, COOKIE_SAME_SITE, null);
 
         WebFilterConfig wfc = new WebFilterConfig();
         wfc.useClient = useClient;
@@ -233,6 +237,7 @@ public final class WebFilterConfig {
         wfc.cookieHttpOnly = cookieHttpOnly;
         wfc.cookiePath = cookiePath;
         wfc.cookieMaxAge = cookieMaxAge;
+        wfc.cookieSameSite = cookieSameSite;
         return wfc;
     }
 
@@ -283,6 +288,8 @@ public final class WebFilterConfig {
     public String getCookieDomain() {
         return cookieDomain;
     }
+
+    public String getCookieSameSite() { return cookieSameSite; }
 
     public boolean isCookieSecure() {
         return cookieSecure;
